@@ -1,7 +1,9 @@
 function getData(evt){
     evt.preventDefault();
     console.log("Frontend Connected")
-    const handle = document.getElementById("inputPassword3").value;
+    for( let i=3;i<5;i++){
+        let elementID= `inputPassword${i}`;
+    const handle = document.getElementById(elementID).value;
     fetch("https://codeforces.com/api/user.info?handles=" + handle).then((response)=>{return response.json();}).then(data => {
         console.log("API Linked",data.result[0])
         document.getElementById('name').innerText = data.result[0].email
@@ -11,12 +13,12 @@ function getData(evt){
         document.getElementById('MaxRating').innerText = data.result[0].maxRating
         document.getElementById('handle').innerText = data.result[0].handle
         document.getElementById('Avatar').setAttribute('src',data.result[0].avatar);
-        
+    
 
 
         
         
-    })
+    })}
 
 
 }
