@@ -9,6 +9,11 @@ function getData(evt){
         document.getElementById('country').innerText = data.result[0].country
         document.getElementById('MaxRank').innerText = data.result[0].maxRank
         document.getElementById('MaxRating').innerText = data.result[0].maxRating
+        document.getElementById('handle').innerText = data.result[0].handle
+        document.getElementById('Avatar').setAttribute('src',data.result[0].avatar);
+        
+
+
         
         
     })
